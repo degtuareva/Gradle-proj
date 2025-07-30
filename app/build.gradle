@@ -1,0 +1,24 @@
+plugins{
+    id 'java'
+    id 'application'
+}
+
+group='org.example'
+version='1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':mylib')
+    implementation 'org.apache.commons:commons-lang3:3.18.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+application{
+    mainClass='org.example.app.Main'
+}
+test{
+    useJUnitPlatform()
+}
